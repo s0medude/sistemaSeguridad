@@ -15,9 +15,9 @@ DIR="/mnt/JENKINS_HOME/workspace"
 
 if [ -d "$DIR" ]; then
   echo "Removing workspace..."
-  rm -fr $DIR
+  rm -fr /mnt/JENKINS_HOME/workspace/*
 else
-  echo "Error: ${DIR} not found. Can not continue."
+  echo "WorkSpace ${DIR} non exists..."
   exit 1
 fi'''
       }
