@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('CleanUp') {
       steps {
-        sh 'sudo rm -rf /mnt/JENKINS_HOME/workspace'
+        sh 'sudo su'
+        sh 'rm -rf /mnt/JENKINS_HOME/workspace'
       }
     }
     stage('Build') {
