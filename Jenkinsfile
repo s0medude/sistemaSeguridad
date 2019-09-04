@@ -8,7 +8,7 @@ pipeline {
 
 if [ -d "$DIR" ]; then
   echo "Removing workspace..."
-  rm -fr /mnt/JENKINS_HOME/workspace
+  rm -fr /mnt/JENKINS_HOME/workspace/*
 else
   echo "workspace ${DIR} non exists..."
 fi'''
