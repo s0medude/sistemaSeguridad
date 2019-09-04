@@ -11,6 +11,8 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 
+cd /
+
 DIR="/mnt/JENKINS_HOME/workspace"
 
 if [ -d "$DIR" ]; then
