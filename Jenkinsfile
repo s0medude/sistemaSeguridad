@@ -8,7 +8,14 @@ pipeline {
     }
     stage('CleanUp') {
       steps {
-        sh 'rm -rf /mnt/JENKINS_HOME/workspace'
+        sh '''DIR="/mnt/JENKINS_HOME/workspace"
+if [ -d "$DIR" ]; then
+  echo "Removing workspace..."
+  rm -fr /mnt/JENKINS_HOME/workspace/
+else
+  echo "Error: ${DIR} not found. Can not continue."
+  exit 1
+fi'''
       }
     }
   }
