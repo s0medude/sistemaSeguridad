@@ -8,7 +8,8 @@ pipeline {
     }
     stage('CleanUp') {
       steps {
-        sh '''DIR="/mnt/JENKINS_HOME/workspace"
+        sh '''#!/bin/bash
+DIR="/mnt/JENKINS_HOME/workspace"
 if [ -d "$DIR" ]; then
   echo "Removing workspace..."
   rm -fr /mnt/JENKINS_HOME/workspace/
