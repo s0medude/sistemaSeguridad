@@ -4,18 +4,13 @@ pipeline {
     stage('CleanUp') {
       agent any
       steps {
-        sh '''#!/bin/bash
-
-cd /
-
-DIR="/mnt/JENKINS_HOME/workspace/*"
+        sh '''DIR="/mnt/JENKINS_HOME/workspace"
 
 if [ -d "$DIR" ]; then
   echo "Removing workspace..."
-  rm -fr /mnt/JENKINS_HOME/workspace/*
+  rm -fr /mnt/JENKINS_HOME/workspace
 else
-  echo "WorkSpace ${DIR} non exists..."
-  exit 1
+  echo "workspace ${DIR} non exists..."
 fi'''
       }
     }
