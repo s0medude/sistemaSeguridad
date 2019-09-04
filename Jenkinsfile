@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('CleanUp') {
       steps {
-        sh 'rm -rf var/jenkins_home/workspace'
+        sh 'rm -rf /mnt/JENKINS_HOME/workspace'
       }
     }
     stage('Build') {
